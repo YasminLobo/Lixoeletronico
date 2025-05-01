@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Mapa de Coleta de Lixo Eletrônico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Estilo do mapa -->
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Mapa de Pontos de Coleta de Lixo Eletrônico</h2>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    // Criar o mapa e centralizar em uma coordenada
+    const map = L.map('map').setView([-23.5505, -46.6333], 12); // São Paulo
+
+    // Adicionar camada de mapa base (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Pontos de coleta (exemplo com coordenadas fictícias)
+    const pontosColeta = [
+      {
+        nome: "EcoPonto Centro",
+        endereco: "Rua Exemplo, 123 - Centro",
+        coords: [-23.5505, -46.6333]
+      },
+      {
+        nome: "Ponto Verde Norte",
+        endereco: "Av. Verde, 456 - Zona Norte",
+        coords: [-23.5205, -46.6250]
+      },
+      {
+        nome: "Recicla Sul",
+        endereco: "Rua Sustentável, 789 - Zona Sul",
+        coords: [-23.5805, -46.6400]
+      }
+    ];
+
+    // Adiciona os marcadores ao mapa
+    pontosColeta.forEach(ponto => {
+      L.marker(ponto.coords).addTo(map)
+        .bindPopup(`<strong>${ponto.nome}</strong><br>${ponto.endereco}`);
+    });
+  </script>
+
+</body>
+</html>
+ <!-- cor=roxo  CD66C7, DC8ED7 -->
