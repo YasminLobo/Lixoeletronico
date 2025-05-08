@@ -107,7 +107,7 @@
           rgba(118, 58, 224, 0.8),
           rgba(99, 69, 251, 0.8)
         ),
-        url("https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        url("https://img.freepik.com/fotos-gratis/variedade-de-objetos-despejados-sujos_23-2148996978.jpg?uid=R144891810&ga=GA1.1.376809253.1718816309&semt=ais_hybrid&w=740");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -451,6 +451,18 @@
       color: var(--white);
     }
     
+    /* Estilos para a seção do jogo */
+    .game-section {
+      background-color: var(--white);
+      text-align: center;
+    }
+    
+    .game-container {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+    
     @media (max-width: 900px) {
       .header__container h1 {
         font-size: 2.5rem;
@@ -528,13 +540,13 @@
       
       <div class="info-card">
         <i class="fas fa-mobile-alt"></i>
-        <h3>O que aceitamos</h3>
+        <h3>O que é aceito nos pontos de coleta</h3>
         <p>Celulares, computadores, tablets, eletrodomésticos, pilhas, baterias e outros eletrônicos de pequeno e médio porte.</p>
       </div>
       
       <div class="info-card">
         <i class="fas fa-ban"></i>
-        <h3>O que não aceitamos</h3>
+        <h3>O que não é aceito nos pontos de coleta</h3>
         <p>Lâmpadas fluorescentes, eletrodomésticos muito grandes (como geladeiras), produtos químicos ou materiais hospitalares.</p>
       </div>
     </div>
@@ -545,7 +557,13 @@
     <p class="section__subtitle">Veja no mapa abaixo todos os pontos de coleta de lixo eletrônico em Caçapava</p>
      
     <div id="map"></div>
-    
+  </section>
+  
+  <section class="game-section section__container">
+    <h2 class="section__title"><i class="fas fa-gamepad"></i> Jogo Educacional: Reciclagem de Lixo Eletrônico</h2>
+    <p class="section__subtitle">Ajude a coletar e classificar o lixo eletrônico de forma correta neste jogo interativo!</p>
+    <div class="game-container">
+      <a href="jogo.html" class="btn">Jogar Agora</a>
     </div>
   </section>
   
@@ -646,80 +664,43 @@
     // Coordenadas dos pontos de coleta
     const pontosColeta = [
       {
-        nome: "Escola SESI Caçapava",
-        endereco: "Av. dos Trabalhadores, 1001, Centro",
-        coords: [-23.0996, -45.7076]
+        nome: "Escola SESI Caçapava (Somente alunos)",
+        endereco: "Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira, Caçapava - SP, 12285-050",
+        coords: [-23.113788263798693, -45.70702094652956]
       },
       {
         nome: "Câmara Municipal dos Vereadores",
-        endereco: "Av. Cel. Manoel Inocêncio, nº 151, Centro",
-        coords: [-23.1005, -45.7063]
+        endereco: "Praça da Bandeira, 151 - Centro, Caçapava - SP, 12281-630",
+        coords: [-23.09992831268969, -45.704636632011336]
       },
       {
         nome: "Parque Ecológico da Moçota",
-        endereco: "R. Antônio Guedes Tavares, s/n, Vila Menino Jesus",
-        coords: [-23.1052, -45.7018]
+        endereco: "R. Antônio Guedes Tavares, s/n - Vila Menino Jesus, Caçapava - SP, 12289-010",
+        coords: [-23.0769285517666, -45.71137553044086]
       },
-      {
-        nome: "Sabesp",
-        endereco: "Rua Antônio de Castro Júnior, nº 222, Jardim América",
-        coords: [-23.0934, -45.7102]
-      },
-      {
-        nome: "Posto de Atendimento ao Trabalhador (PAT)",
-        endereco: "Ladeira São José, nº 90, Centro",
-        coords: [-23.1018, -45.7057]
-      },
+      
       {
         nome: "ESF Caçapava Velha",
         endereco: "Estrada Mun. Amadeu Tenedini, 249 - Caçapava Velha",
-        coords: [-23.0853, -45.7221]
+        coords: [-23.11733919773164, -45.6435716390106]
       },
       {
         nome: "ESF Nova Caçapava",
         endereco: "Av. Honório Ferreira Pedrosa, s/n, Parque Residencial Nova Caçapava",
-        coords: [-23.1124, -45.6927]
+        coords: [-23.103731330274876, -45.68242887677588]
       },
       {
         nome: "ESF Piedade",
         endereco: "Rua João Antonio Nogueira, 110",
-        coords: [-23.0956, -45.7153]
+        coords: [-23.184731830565752, -45.727852689678514]
       },
-      {
-        nome: "Secretaria de Desenvolvimento Social",
-        endereco: "Rua Alberto Pinto de Faria, nº 290, Jardim Julieta",
-        coords: [-23.1087, -45.6984]
-      },
+   
       {
         nome: "Museu Roberto Lee",
         endereco: "Rua Dr. José de Moura Resende, nº 475, Vera Cruz",
-        coords: [-23.1039, -45.7002]
+        coords: [-23.104284349841063, -45.713834289681735]
       },
-      {
-        nome: "Secretaria de Defesa e Mobilidade Urbana",
-        endereco: "Av. Cel. Manoel Inocêncio, nº 999, Vila São João",
-        coords: [-23.0992, -45.7048]
-      },
-      {
-        nome: "Secretaria de Educação",
-        endereco: "Ladeira São José, nº 57",
-        coords: [-23.1015, -45.7059]
-      },
-      {
-        nome: "Secretaria de Finanças",
-        endereco: "Rua Cap. Carlos de Moura, nº 243, Vila Pantaleão",
-        coords: [-23.0978, -45.7083]
-      },
-      {
-        nome: "Secretaria de Obras e Serviços Municipais",
-        endereco: "Rua Regente Feijó, nº 17, Vila Santos",
-        coords: [-23.0983, -45.7091]
-      },
-      {
-        nome: "Secretaria de Planejamento e Meio Ambiente",
-        endereco: "Rua Regente Feijó, nº 17, Vila Santos",
-        coords: [-23.0983, -45.7091]
-      },
+      
       {
         nome: "Postão",
         endereco: "Rua Prof. João Batista Ortiz Monteiro, Vila Antônio Augusto",
