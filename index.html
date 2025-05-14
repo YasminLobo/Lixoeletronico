@@ -42,6 +42,7 @@
       background-color: var(--bg-color);
       color: var(--text-dark);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
     
     .section__container {
@@ -51,20 +52,34 @@
     }
     
     .section__title {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
       color: var(--text-dark);
       text-align: center;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .section__title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary-color);
     }
     
     .section__subtitle {
       max-width: calc(var(--max-width) / 2);
       font-size: 1rem;
       margin: auto;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       color: var(--text-light);
       text-align: center;
+      line-height: 1.8;
     }
     
     .btn {
@@ -75,24 +90,30 @@
       color: var(--white);
       background-color: var(--secondary-color);
       cursor: pointer;
-      transition: 0.3s;
+      transition: all 0.3s ease;
       border-radius: 4px;
       text-decoration: none;
       display: inline-block;
+      font-weight: 500;
     }
     
     .btn:hover {
       background-color: #8bb82b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     
     img {
       width: 100%;
+      display: block;
     }
     
     a {
       text-decoration: none;
+      color: inherit;
     }
     
+    /* Header Styles */
     header {
       position: relative;
       min-height: 100vh;
@@ -117,16 +138,21 @@
     }
     
     .nav__container {
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      max-width: var(--max-width);
+      margin: 0 auto;
     }
     
     .nav__logo h2 {
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--secondary-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     
     .header__container {
@@ -136,23 +162,30 @@
       justify-content: center;
       align-items: flex-start;
       color: var(--white);
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1rem;
     }
     
     .header__container h1 {
       font-size: 3.5rem;
       font-weight: 700;
-      line-height: 4rem;
-      margin-bottom: 1rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
     
     .header__container p {
       font-size: 1.2rem;
       max-width: 600px;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
     }
     
+    /* Info Section Styles */
     .info-section {
       background-color: var(--white);
+      position: relative;
     }
     
     .info-grid {
@@ -166,31 +199,65 @@
       padding: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.2rem;
       background-color: var(--white);
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      transition: transform 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(118, 58, 224, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: var(--primary-color);
     }
     
     .info-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
     
     .info-card i {
       color: var(--primary-color);
-      font-size: 2rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
     
     .info-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
       color: var(--primary-color);
+      position: relative;
+      padding-bottom: 0.5rem;
     }
     
+    .info-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--secondary-color);
+    }
+    
+    .info-card p {
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    
+    /* Map Section Styles */
     #map-section {
       position: relative;
       isolation: isolate;
+      background-color: var(--bg-color);
     }
     
     #map-section::before {
@@ -205,45 +272,134 @@
     #map {
       height: 600px;
       width: 100%;
-      border-radius: 8px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       margin-top: 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
     
-    .location-info {
-      background-color: var(--white);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-top: 2rem;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    /* Footer Styles */
+    footer {
+      background: linear-gradient(to right, var(--primary-color), var(--primary-color-dark));
+      color: var(--white);
+      position: relative;
     }
     
-    .location-info h3 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-    
-    .location-details {
+    .footer__container {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 5rem 1rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    
+    .footer__col h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .footer__col h4 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .footer__col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--secondary-color);
+    }
+    
+    .footer__col p {
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+    
+    .footer__col p:hover {
+      color: var(--secondary-color);
+      opacity: 1;
+    }
+    
+    .social__icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
       margin-top: 1.5rem;
     }
     
-    .detail-item {
+    .social__icons a {
+      color: var(--white);
+      font-size: 1.3rem;
+      transition: 0.3s;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       display: flex;
-      align-items: flex-start;
-      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.1);
     }
     
-    .detail-item i {
-      color: var(--primary-color);
-      font-size: 1.2rem;
-      margin-top: 0.2rem;
+    .social__icons a:hover {
+      color: var(--secondary-color);
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
     }
     
-    /* Estilos do Chatbot - Modificado para lado direito */
+    /* Botão Voltar ao Topo */
+    .back-to-top {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+      border: none;
+      outline: none;
+    }
+    
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background-color: var(--primary-color-dark);
+      transform: translateY(-5px) scale(1.1);
+    }
+    
+    /* Chatbot Styles */
     .chatbot-container {
       position: fixed;
       bottom: 30px;
@@ -262,14 +418,15 @@
       align-items: center;
       font-size: 1.5rem;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
       border: none;
       outline: none;
     }
     
     .chatbot-button:hover {
       transform: scale(1.1);
+      background-color: var(--primary-color-dark);
     }
     
     .chatbot-modal {
@@ -297,12 +454,18 @@
       max-height: 600px;
       background-color: white;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       margin-bottom: 80px;
       margin-right: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+    
+    .chatbot-modal.active .chatbot-window {
+      transform: translateY(0);
     }
     
     .chatbot-header {
@@ -317,6 +480,7 @@
     .chatbot-header h3 {
       margin: 0;
       font-size: 1.2rem;
+      font-weight: 600;
     }
     
     .chatbot-close {
@@ -326,6 +490,11 @@
       font-size: 1.5rem;
       cursor: pointer;
       padding: 0 10px;
+      transition: 0.3s;
+    }
+    
+    .chatbot-close:hover {
+      transform: rotate(90deg);
     }
     
     .chatbot-messages {
@@ -339,37 +508,53 @@
     
     .message {
       max-width: 80%;
-      padding: 10px 15px;
+      padding: 12px 16px;
       border-radius: 18px;
       font-size: 0.9rem;
       word-wrap: break-word;
+      line-height: 1.5;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     .bot-message {
       align-self: flex-start;
-      background-color: #f0f0f0;
+      background-color: #f5f5f5;
       color: #333;
+      border-top-left-radius: 5px;
     }
     
     .user-message {
       align-self: flex-end;
       background-color: var(--primary-color);
       color: white;
+      border-top-right-radius: 5px;
     }
     
     .chatbot-input {
       display: flex;
-      padding: 10px;
+      padding: 15px;
       border-top: 1px solid #eee;
+      background-color: #fafafa;
     }
     
     .chatbot-input input {
       flex: 1;
-      padding: 10px 15px;
+      padding: 12px 15px;
       border: 1px solid #ddd;
-      border-radius: 20px;
+      border-radius: 25px;
       outline: none;
       font-size: 0.9rem;
+      transition: 0.3s;
+    }
+    
+    .chatbot-input input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(118, 58, 224, 0.2);
     }
     
     .chatbot-input button {
@@ -377,115 +562,40 @@
       color: white;
       border: none;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       margin-left: 10px;
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    
-    footer {
-      background: linear-gradient(to right, var(--primary-color), var(--primary-color-dark));
-      color: var(--white);
-    }
-    
-    .footer__container {
-      max-width: var(--max-width);
-      margin: auto;
-      padding: 5rem 1rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-    
-    .footer__col h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--secondary-color);
-      margin-bottom: 2rem;
-    }
-    
-    .footer__col h4 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-    }
-    
-    .footer__col p {
-      font-size: 1rem;
-      color: var(--white);
-      margin-bottom: 1rem;
-      cursor: pointer;
       transition: 0.3s;
     }
     
-    .social__icons {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
+    .chatbot-input button:hover {
+      background-color: var(--primary-color-dark);
+      transform: scale(1.05);
     }
     
-    .social__icons a {
-      color: var(--white);
-      font-size: 1.5rem;
-      transition: 0.3s;
-    }
-    
-    .footer__col :is(p:hover, a:hover) {
-      color: var(--secondary-color);
-    }
-    
-    .collection-points-list {
-      margin-top: 1rem;
-      columns: 2;
-      column-gap: 2rem;
-    }
-    
-    .collection-points-list li {
-      margin-bottom: 0.8rem;
-      break-inside: avoid;
-      color: var(--white);
-    }
-    
-    /* Estilos para a seção do jogo */
-    .game-section {
-      background-color: var(--white);
-      text-align: center;
-    }
-    
-    .game-container {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-    }
-    
+    /* Responsive Styles */
     @media (max-width: 900px) {
       .header__container h1 {
-        font-size: 2.5rem;
-        line-height: 3rem;
+        font-size: 2.8rem;
       }
       
       .footer__container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
       }
       
-      .location-details {
-        grid-template-columns: 1fr;
-      }
-      
-      .collection-points-list {
-        columns: 1;
+      .section__title {
+        font-size: 1.6rem;
       }
     }
     
     @media (max-width: 600px) {
       .header__container h1 {
-        font-size: 2rem;
-        line-height: 2.5rem;
+        font-size: 2.2rem;
       }
       
       .header__container p {
@@ -497,35 +607,67 @@
       }
       
       .chatbot-container {
-        right: 15px;
+        right: 20px;
+        bottom: 20px;
       }
       
       .chatbot-window {
         width: 95%;
         height: 80vh;
+        margin-bottom: 60px;
       }
       
       .chatbot-modal {
         padding: 15px;
       }
+      
+      .back-to-top {
+        right: 20px;
+        bottom: 80px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+      }
+      
+      .section__container {
+        padding: 3rem 1rem;
+      }
+      
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
     }
+    .nav__logo {
+    width: 20%; /* ou o tamanho que preferir */
+    height: auto;
+    transition: all 0.3s ease; /* para efeitos suaves */
+}
+/* Efeito hover opcional */
+.nav__logo:hover {
+    transform: scale(1.05); /* cresce levemente ao passar o mouse */
+    opacity: 0.9;
+}
+
+
   </style>
 </head>
 <body>
+  <!-- Header Section -->
   <header>
     <div class="nav__container">
       <div class="nav__logo">
-        <h2><i class="fas fa-recycle"></i> Caçapava Recicla</h2>
+         <img src="./img/tech.png" alt="">
       </div>
     </div>
     
-    <div class="section__container header__container">
+    <div class="header__container">
       <h1>Pontos de Coleta de Lixo Eletrônico em Caçapava</h1>
       <p>Descarte seu lixo eletrônico de forma correta nos diversos pontos de coleta da cidade e contribua para um meio ambiente mais sustentável</p>
       <a href="#map-section" class="btn">Ver localização</a>
     </div>
   </header>
   
+  <!-- Collection Points Info Section -->
   <section class="info-section section__container">
     <h2 class="section__title">Pontos Oficiais de Coleta</h2>
     <p class="section__subtitle">Caçapava possui diversos pontos oficiais de coleta de lixo eletrônico espalhados pela cidade. Traga seus dispositivos eletrônicos usados e ajude a preservar o meio ambiente.</p>
@@ -552,6 +694,7 @@
     </div>
   </section>
   
+  <!-- Map Section -->
   <section id="map-section" class="section__container">
     <h2 class="section__title"><i class="fas fa-map-marked-alt"></i> Mapa dos Pontos de Coleta</h2>
     <p class="section__subtitle">Veja no mapa abaixo todos os pontos de coleta de lixo eletrônico em Caçapava</p>
@@ -559,14 +702,7 @@
     <div id="map"></div>
   </section>
   
-  <section class="game-section section__container">
-    <h2 class="section__title"><i class="fas fa-gamepad"></i> Jogo Educacional: Reciclagem de Lixo Eletrônico</h2>
-    <p class="section__subtitle">Ajude a coletar e classificar o lixo eletrônico de forma correta neste jogo interativo!</p>
-    <div class="game-container">
-      <a href="jogo.html" class="btn">Jogar Agora</a>
-    </div>
-  </section>
-  
+  <!-- Why Recycle Section -->
   <section class="info-section section__container">
     <h2 class="section__title">Por que descartar corretamente?</h2>
     <p class="section__subtitle">O lixo eletrônico contém substâncias tóxicas que podem contaminar o solo e a água se descartados incorretamente. Ao utilizar os pontos de coleta de Caçapava, você está:</p>
@@ -591,37 +727,135 @@
       </div>
     </div>
   </section>
-  
-  <footer>
-    <div class="footer__container">
-      <div class="footer__col">
-        <h2><i class="fas fa-recycle"></i> Caçapava Recicla</h2>
-        <p>Pontos de Coleta de Lixo Eletrônico - Caçapava/SP</p>
+<footer class="senai-footer">
+  <div class="footer-content">
+    <p class="footer-text"> Integrantes do Projeto de extensão universitária da Faculdade de Tecnologia SENAI-Félix Guisard</p>
+    
+    <div class="linkedin-profiles">
+      <div class="profile">
+        <a href="https://www.linkedin.com/in/yasminslobo/" target="_blank">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQGWmzht0OIOyA/profile-displayphoto-shrink_800_800/B4DZZa8rJ0HwAc-/0/1745282577918?e=1752710400&v=beta&t=o4f4zReqQmjGX7CST4oFhFZTK5mhF4UDFdXMXsan0ec" alt="Yasmin Lobo">
+          <span>Yasmin Lobo</span>
+        </a>
       </div>
       
-      <div class="footer__col">
-        <h4>Links Úteis</h4>
-        <p>Prefeitura de Caçapava</p>
-        <p>Política de privacidade</p>
-        <p>Termos de uso</p>
+      <div class="profile">
+        <a href="https://www.linkedin.com/in/isabella-salgado-de-souza-/" target="_blank">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQHPDCl11uTBSw/profile-displayphoto-shrink_800_800/B4DZVJusVEHIAg-/0/1740698733507?e=1752710400&v=beta&t=EREHb17GQXdVaXVvh9fmbIl1XTneVF-B4HMG6cWxsFg" alt="Isabella Salgado">
+          <span>Isabella Salgado</span>
+        </a>
       </div>
       
-      <div class="footer__col">
-        <h4>Contato</h4>
-        <p><i class="fas fa-phone"></i> (12) 3456-7890</p>
-        <p><i class="fas fa-envelope"></i> meioambiente@cacapava.sp.gov.br</p>
+      <div class="profile">
+        <a href="https://www.linkedin.com/in/luis-augusto-38980a26b/" target="_blank">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQFzo8SYWQ9SMA/profile-displayphoto-shrink_800_800/B4DZS8oCRKHAAc-/0/1738331400133?e=1752710400&v=beta&t=7dq5EVteainCc4i6HbURpF88a_txGPgB1WqCK5XntjA" alt="Luís Augusto">
+          <span>Luís Augusto</span>
+        </a>
       </div>
       
-      <div class="footer__col">
-        <h4>Redes Sociais</h4>
-        <div class="social__icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
+      <div class="profile">
+        <a href="https://www.linkedin.com/in/luisotvio9/" target="_blank">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQHkyLXQFGm62w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731932376735?e=1752710400&v=beta&t=KpAxMJKkBMlP8-WXOt6E9GCAHiLx8GS8ic9rTvKeJA4" alt="Luís Otávio">
+          <span>Luís Otávio</span>
+        </a>
+      </div>
+      
+      <div class="profile">
+        <a href="https://www.linkedin.com/in/thales-rocha-6233b9354/" target="_blank">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQGEwAkArYT3kQ/profile-displayphoto-shrink_800_800/B4DZVeAE7oHwAc-/0/1741038834228?e=1752710400&v=beta&t=tpRzTIZVTMOfXipJ2xLiqQFVE-YBQO-PQuv8veFXHM8" alt="Thales Rocha">
+          <span>Thales Rocha</span>
+        </a>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+<style> 
+  .senai-footer {
+  background-color: #07773f;
+  color: white;
+  padding: 2.5rem 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.footer-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.linkedin-profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.profile {
+  width: 120px;
+  text-align: center;
+}
+
+.profile a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.profile span {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.profile:hover img {
+  border-color: #94ecbc;
+  transform: scale(1.05);
+}
+
+.profile:hover span {
+  color: #dddddd;
+}
+
+@media (max-width: 768px) {
+  .linkedin-profiles {
+    gap: 1rem;
+  }
+  
+  .profile {
+    width: 100px;
+  }
+  
+  .profile img {
+    width: 60px;
+    height: 60px;
+  }
+}
+</style>
+  
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
   
   <!-- Chatbot Modal -->
   <div class="chatbot-container">
@@ -678,7 +912,6 @@
         endereco: "R. Antônio Guedes Tavares, s/n - Vila Menino Jesus, Caçapava - SP, 12289-010",
         coords: [-23.0769285517666, -45.71137553044086]
       },
-      
       {
         nome: "ESF Caçapava Velha",
         endereco: "Estrada Mun. Amadeu Tenedini, 249 - Caçapava Velha",
@@ -694,13 +927,11 @@
         endereco: "Rua João Antonio Nogueira, 110",
         coords: [-23.184731830565752, -45.727852689678514]
       },
-   
       {
         nome: "Museu Roberto Lee",
         endereco: "Rua Dr. José de Moura Resende, nº 475, Vera Cruz",
         coords: [-23.104284349841063, -45.713834289681735]
       },
-      
       {
         nome: "Postão",
         endereco: "Rua Prof. João Batista Ortiz Monteiro, Vila Antônio Augusto",
@@ -734,7 +965,7 @@
             <h4 style="margin: 0 0 10px; color: #763ae0;">${ponto.nome}</h4>
             <p><i class="fas fa-map-marker-alt" style="color: #763ae0;"></i> ${ponto.endereco}</p>
             <p><i class="fas fa-clock" style="color: #763ae0;"></i> Seg-Sex: 8h-17h</p>
-            <a href="https://maps.google.com?q=${encodeURIComponent(ponto.nome + ' ' + ponto.endereco)}" target="_blank" style="background-color: #763ae0; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-top: 10px; display: inline-block; text-decoration: none;">
+            <a href="https://maps.google.com?q=${encodeURIComponent(ponto.nome + ' ' + ponto.endereco)}" target="_blank" style="background-color: #763ae0; color: white; border: none; padding: 8px 12px; border-radius: 4px; margin-top: 10px; display: inline-block; text-decoration: none; transition: all 0.3s;">
               <i class="fas fa-directions"></i> Como chegar
             </a>
           </div>
@@ -781,7 +1012,7 @@
       function addMessage(text, sender) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${sender}-message`;
-        messageDiv.textContent = text;
+        messageDiv.innerHTML = text.replace(/\n/g, '<br>');
         chatbotMessages.appendChild(messageDiv);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
       }
@@ -817,13 +1048,32 @@
             return "Os eletrônicos coletados são enviados para empresas especializadas que separam materiais recicláveis (como metais e plásticos) e descartam substâncias perigosas adequadamente. Até 90% dos componentes podem ser reaproveitados. Para mais detalhes, contate: meioambiente@cacapava.sp.gov.br.";
           }
           else {
-            return "Para outras dúvidas, posso ajudar com informações sobre segurança no descarte, proteção de dados, processo de reciclagem ou outros temas. Entre em contato com a Secretaria do Meio Ambiente:\nTelefone: (12) 3456-7890\nEmail: meioambiente@cacapava.sp.gov.br";
+            return "Para outras dúvidas, posso ajudar com informações sobre segurança no descarte, proteção de dados, processo de reciclagem ou outros temas. Entre em contato com a Secretaria do Meio Ambiente:<br><br>Telefone: (12) 3456-7890<br>Email: meioambiente@cacapava.sp.gov.br";
           }
         }
         else {
-          return "Não entendi sua pergunta. Tente perguntar sobre:\n1. Pontos de coleta\n2. Materiais aceitos\n3. Horários\n4. Outras dúvidas (segurança, privacidade, reciclagem, etc.)\nOu contate a Secretaria do Meio Ambiente: (12) 3456-7890.";
+          return "Não entendi sua pergunta. Tente perguntar sobre:<br>1. Pontos de coleta<br>2. Materiais aceitos<br>3. Horários<br>4. Outras dúvidas (segurança, privacidade, reciclagem, etc.)<br><br>Ou contate a Secretaria do Meio Ambiente: (12) 3456-7890";
         }
       }
+
+      // Botão Voltar ao Topo
+      const backToTopButton = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('active');
+        } else {
+          backToTopButton.classList.remove('active');
+        }
+      });
+
+      backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
     });
   </script>
 </body>
