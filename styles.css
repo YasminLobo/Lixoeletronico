@@ -24,17 +24,16 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 .section__container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 3rem 1rem;
+  padding: 5rem 1rem;
 }
 
 .section__title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--text-dark);
@@ -49,24 +48,23 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: 80px;
   height: 3px;
   background-color: var(--primary-color);
 }
 
 .section__subtitle {
-  width: 100%;
-  font-size: 0.95rem;
+  max-width: calc(var(--max-width) / 2);
+  font-size: 1rem;
   margin: auto;
   margin-bottom: 2rem;
   color: var(--text-light);
   text-align: center;
   line-height: 1.8;
-  padding: 0 1rem;
 }
 
 .btn {
-  padding: 0.7rem 1.8rem;
+  padding: 0.75rem 2rem;
   outline: none;
   border: none;
   font-size: 1rem;
@@ -88,7 +86,6 @@ body {
 
 img {
   width: 100%;
-  height: auto;
   display: block;
 }
 
@@ -122,7 +119,7 @@ header::before {
 }
 
 .nav__container {
-  padding: 1.2rem 1rem;
+  padding: 1.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -130,18 +127,17 @@ header::before {
   margin: 0 auto;
 }
 
-.nav__logo {
-  max-width: 150px;
-  transition: all 0.3s ease;
-}
-
-.nav__logo:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+.nav__logo h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .header__container {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -149,22 +145,22 @@ header::before {
   color: var(--white);
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .header__container h1 {
-  font-size: 2.2rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .header__container p {
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
 }
 
 /* Info Section Styles */
@@ -175,19 +171,19 @@ header::before {
 
 .info-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .info-card {
-  padding: 1.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
   background-color: var(--white);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
   transition: all 0.3s ease;
   border: 1px solid rgba(118, 58, 224, 0.1);
   position: relative;
@@ -199,24 +195,24 @@ header::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 5px;
   height: 100%;
   background-color: var(--primary-color);
 }
 
 .info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .info-card i {
   color: var(--primary-color);
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
 .info-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--primary-color);
   position: relative;
@@ -228,15 +224,14 @@ header::before {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 40px;
-  height: 2px;
+  width: 50px;
+  height: 3px;
   background-color: var(--secondary-color);
 }
 
 .info-card p {
   color: var(--text-light);
-  line-height: 1.6;
-  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 /* Map Section Styles */
@@ -251,16 +246,16 @@ header::before {
   content: "";
   background-color: var(--bg-color);
   inset: 0;
-  transform: skewY(-3deg);
+  transform: skewY(-5deg);
   z-index: -1;
 }
 
 #map {
-  height: 400px;
+  height: 600px;
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -274,27 +269,27 @@ footer {
 .footer__container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 3rem 1rem;
+  padding: 5rem 1rem;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
 .footer__col h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--secondary-color);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .footer__col h4 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
 }
@@ -304,18 +299,18 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 35px;
+  width: 40px;
   height: 2px;
   background-color: var(--secondary-color);
 }
 
 .footer__col p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--white);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   transition: 0.3s;
-  line-height: 1.6;
+  line-height: 1.8;
   opacity: 0.9;
 }
 
@@ -327,17 +322,17 @@ footer {
 .social__icons {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .social__icons a {
   color: var(--white);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   transition: 0.3s;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -354,19 +349,19 @@ footer {
 /* Botão Voltar ao Topo */
 .back-to-top {
   position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
+  bottom: 100px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: var(--primary-color);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
@@ -382,20 +377,20 @@ footer {
 
 .back-to-top:hover {
   background-color: var(--primary-color-dark);
-  transform: translateY(-3px) scale(1.05);
+  transform: translateY(-5px) scale(1.1);
 }
 
-/* Chatbot Styles - Versão Mobile First */
+/* Chatbot Styles */
 .chatbot-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
   z-index: 1000;
 }
 
 .chatbot-button {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: var(--primary-color);
   color: white;
@@ -404,14 +399,15 @@ footer {
   align-items: center;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   border: none;
   outline: none;
 }
 
-.chatbot-button:active {
-  transform: scale(0.95);
+.chatbot-button:hover {
+  transform: scale(1.1);
+  background-color: var(--primary-color-dark);
 }
 
 .chatbot-modal {
@@ -422,10 +418,10 @@ footer {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
   z-index: 1001;
-  padding: 0;
+  padding: 30px;
 }
 
 .chatbot-modal.active {
@@ -433,16 +429,20 @@ footer {
 }
 
 .chatbot-window {
-  width: 100%;
-  height: 85vh;
+  width: 90%;
+  max-width: 400px;
+  height: 70vh;
+  max-height: 600px;
   background-color: white;
-  border-radius: 15px 15px 0 0;
-  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transform: translateY(100%);
-  transition: transform 0.3s ease-out;
+  margin-bottom: 80px;
+  margin-right: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
 }
 
 .chatbot-modal.active .chatbot-window {
@@ -452,7 +452,7 @@ footer {
 .chatbot-header {
   background-color: var(--primary-color);
   color: white;
-  padding: 12px 15px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -460,7 +460,7 @@ footer {
 
 .chatbot-header h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -468,9 +468,9 @@ footer {
   background: none;
   border: none;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  padding: 0 8px;
+  padding: 0 10px;
   transition: 0.3s;
 }
 
@@ -480,19 +480,17 @@ footer {
 
 .chatbot-messages {
   flex: 1;
-  padding: 10px;
+  padding: 15px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
+  gap: 10px;
 }
 
 .message {
-  max-width: 85%;
-  padding: 10px 14px;
-  border-radius: 15px;
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 18px;
   font-size: 0.9rem;
   word-wrap: break-word;
   line-height: 1.5;
@@ -500,7 +498,7 @@ footer {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -520,18 +518,18 @@ footer {
 
 .chatbot-input {
   display: flex;
-  padding: 10px 12px;
+  padding: 15px;
   border-top: 1px solid #eee;
   background-color: #fafafa;
 }
 
 .chatbot-input input {
   flex: 1;
-  padding: 10px 12px;
+  padding: 12px 15px;
   border: 1px solid #ddd;
   border-radius: 25px;
   outline: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: 0.3s;
 }
 
@@ -545,9 +543,9 @@ footer {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  margin-left: 8px;
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -555,15 +553,89 @@ footer {
   transition: 0.3s;
 }
 
-.chatbot-input button:active {
-  transform: scale(0.95);
+.chatbot-input button:hover {
+  background-color: var(--primary-color-dark);
+  transform: scale(1.05);
 }
 
-/* Footer SENAI */
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .header__container h1 {
+    font-size: 2.8rem;
+  }
+  
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  .section__title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__container h1 {
+    font-size: 2.2rem;
+  }
+  
+  .header__container p {
+    font-size: 1rem;
+  }
+  
+  .footer__container {
+    grid-template-columns: 1fr;
+  }
+  
+  .chatbot-container {
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  .chatbot-window {
+    width: 95%;
+    height: 80vh;
+    margin-bottom: 60px;
+  }
+  
+  .chatbot-modal {
+    padding: 15px;
+  }
+  
+  .back-to-top {
+    right: 20px;
+    bottom: 80px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  
+  .section__container {
+    padding: 3rem 1rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nav__logo {
+  width: 20%; /* ou o tamanho que preferir */
+  height: auto;
+  transition: all 0.3s ease; /* para efeitos suaves */
+}
+
+/* Efeito hover opcional */
+.nav__logo:hover {
+  transform: scale(1.05); /* cresce levemente ao passar o mouse */
+  opacity: 0.9;
+}
+
+/* Footer Styles */
 .senai-footer {
   background-color: #07773f;
   color: white;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -571,25 +643,25 @@ footer {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
-  padding: 0 1.5rem;
+  padding: 0 20px;
 }
 
 .footer-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .linkedin-profiles {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
-  margin-top: 1.2rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .profile {
-  width: 100px;
+  width: 120px;
   text-align: center;
 }
 
@@ -603,162 +675,40 @@ footer {
 }
 
 .profile img {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 0.5rem;
   transition: all 0.3s ease;
 }
 
 .profile span {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   margin-top: 0.3rem;
 }
 
-/* Media Queries para telas maiores */
-@media (min-width: 768px) {
-  .section__container {
-    padding: 4rem 1.5rem;
-  }
-  
-  .section__title {
-    font-size: 1.8rem;
-  }
-  
-  .section__subtitle {
-    font-size: 1rem;
-    max-width: calc(var(--max-width) / 2);
-    padding: 0;
-  }
-  
-  .header__container h1 {
-    font-size: 3rem;
-  }
-  
-  .header__container p {
-    font-size: 1.1rem;
-    max-width: 600px;
-  }
-  
-  .info-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .info-card {
-    padding: 2rem;
-    gap: 1.2rem;
-  }
-  
-  .footer__container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    padding: 4rem 1.5rem;
-  }
-  
-  #map {
-    height: 500px;
-  }
-  
-  .back-to-top {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-    bottom: 100px;
-    right: 30px;
-  }
-  
-  .chatbot-container {
-    right: 30px;
-    bottom: 30px;
-  }
-  
-  .chatbot-button {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .chatbot-modal {
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 30px;
-  }
-  
-  .chatbot-window {
-    width: 90%;
-    max-width: 400px;
-    height: 70vh;
-    max-height: 600px;
-    border-radius: 15px;
-    margin-bottom: 80px;
-    transform: translateY(20px);
-  }
-  
-  .chatbot-header {
-    padding: 15px;
-  }
-  
-  .chatbot-messages {
-    padding: 15px;
-  }
-  
-  .chatbot-input {
-    padding: 15px;
+.profile:hover img {
+  border-color: #94ecbc;
+  transform: scale(1.05);
+}
+
+.profile:hover span {
+  color: #dddddd;
+}
+
+@media (max-width: 768px) {
+  .linkedin-profiles {
+    gap: 1rem;
   }
   
   .profile {
-    width: 120px;
+    width: 100px;
   }
   
   .profile img {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-@media (min-width: 992px) {
-  .footer__container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-  
-  .nav__container {
-    padding: 1.5rem 2rem;
-  }
-  
-  .header__container h1 {
-    font-size: 3.5rem;
-  }
-  
-  .info-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  }
-}
-
-/* Ajustes para landscape em mobile */
-@media (max-width: 767px) and (orientation: landscape) {
-  .chatbot-window {
-    height: 70vh;
-  }
-  
-  .chatbot-messages {
-    max-height: 55vh;
-  }
-  
-  .header__container {
-    min-height: calc(100vh - 60px);
-  }
-}
-
-/* Ajuste para evitar que o teclado virtual cubra o input */
-@media (max-height: 500px) {
-  .chatbot-window {
-    height: 90vh;
-  }
-  
-  .chatbot-messages {
-    max-height: 75vh;
+    width: 60px;
+    height: 60px;
   }
 }

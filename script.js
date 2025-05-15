@@ -178,3 +178,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+// Detecta quando o teclado virtual é aberto
+function handleKeyboard() {
+  const chatbotWindow = document.querySelector('.chatbot-window');
+  const messagesArea = document.querySelector('.chatbot-messages');
+  const inputArea = document.querySelector('.chatbot-input-area');
+
+  if (window.innerHeight < window.outerHeight * 0.8) {
+    chatbotWindow.classList.add('keyboard-open');
+    messagesArea.scrollTop = messagesArea.scrollHeight;
+  } else {
+    chatbotWindow.classList.remove('keyboard-open');
+  }
+}
+
+window.addEventListener('resize', handleKeyboard);
